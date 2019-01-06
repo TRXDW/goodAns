@@ -1,1 +1,3 @@
-console.log("mamy to");
+function goodAns() {
+    console.log("mamy to");
+}
