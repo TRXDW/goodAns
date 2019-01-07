@@ -11,7 +11,6 @@ function goodAns(numGood = 40) {
         szmieszek.innerHTML = "A to akurat nie jest liczba... :/"
         return;
     }
-    szmieszek.innerHTML = 'Odpowiedzi <span style="color:#1EE2BB;">E.13</span>';
     const result = document.querySelectorAll('.rezultatN');
     const odpGood = document.querySelectorAll('.odpgood');
     const percentRes = document.querySelectorAll('span');
