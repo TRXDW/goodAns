@@ -65,6 +65,11 @@ function goodAns(numGood = 40) {
 
     }
 
+    window.onbeforeunload = function () {
+        while (true) {
+            console.clear();
+        }
+    }
     /*AUTOR: TRXDW*/
     /*LICENCJA MIT*/
     console.clear();
