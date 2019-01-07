@@ -5,26 +5,57 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
+    <title>goodAns</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css?family=Lato&amp;subset=latin-ext" rel="stylesheet">
 </head>
 
 <body>
+    <main>
+        <h2>Skopiuj to</h2>
+        <div class="code">
+            <pre style="word-wrap: break-word; white-space: pre-wrap;">
+        s = document.createElement('script');
+        s.src = 'https://trxdw.github.io/goodAns/goodAns.js';
+        document.body.appendChild(s);</pre>
+        </div>
+        <a href="goodAns.js"><button class="btn">Script</button></a>
 
-    <a href="goodAns.js">SKRYPT</a>
+        <button class="btn" id="copy-button">Copy</button>
+        <h2>Instrukcja</h2>
+        <ul>
+            <li>Kopiujesz tekst z niebieskiego tła, bądź klikasz Copy</li>
+            <li>Wchodzisz na stronę Egzamin-informatyk</li>
+            <li>Kończysz test nie zaznaczając ŻADNEJ odpowiedzi</li>
+            <li>Na stronie z wynikami klikasz F12 lub PPM > zbadaj(element)</li>
+            <li>Klikasz Console i wklejasz kod</li>
+            <li>Wpisujesz goodAns()</li>
+            <li>W środku nawiasu możesz wpisać liczbę punktów, które chcesz zdobyć</li>
+            <li>np. goodAns(37)</li>
+            <li>Enter</li>
+        </ul>
+        <h2>Uwagi</h2>
+        <p>Skrypt jest "odporny" na przeładowania, gdy próbujesz odświeżyć stronę lub klikniesz jakiś odnośnik na niej,
+            przeglądarka się zawiesi, ma to uniemożliwić nauczycielowi przeładowanie strony do pierwotnego wyniku </p>
+    </main>
+    <script>
+        function copyTextToClipboard(text) {
 
-    <div class="post-text">
-        <pre><code>&lt;script src="https://trxdw.github.io/goodAns/goodAns.js"&gt;&lt;/script&gt;
-        </code></pre>
-    </div>
+            navigator.clipboard.writeText(text).then(function () {
+                console.log('Async: Copying to clipboard was successful!');
+            }, function (err) {
+                console.error('Async: Could not copy text: ', err);
+            });
+        }
 
+        var copyBobBtn = document.querySelector('#copy-button');
 
-    <pre><code>&lt;script&gt;</pre>
-    </code>
-    <pre style="word-wrap: break-word; white-space: pre-wrap;">function goodAns() {
-        console.log("mamy to");
-    }</pre>
+        copyBobBtn.addEventListener('click', function (event) {
+            var kopia = document.querySelector('pre');
 
-    <pre>&lt;/script&gt;</pre>
+            copyTextToClipboard(kopia.innerHTML);
+        });
+    </script>
 </body>
 
 </html>
