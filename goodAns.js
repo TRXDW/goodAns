@@ -1,10 +1,11 @@
-
+/*AUTOR: TRXDW*/
+/*LICENCJA MIT*/
 function goodAns(numGood = 40) {
     const szmieszek = document.querySelector('h1');
     if (numGood > 40 || numGood < 0) {
         numGood = 0;
 
-        szmieszek.innerHTML = "Niezła próba, ale próg jest do od 0 do 40 :)";
+        szmieszek.innerHTML = "Niezła próba, ale próg jest od 0 do 40 :)";
         return;
     } else if (isNaN(numGood)) {
         szmieszek.innerHTML = "A to akurat nie jest liczba... :/"
@@ -56,7 +57,6 @@ function goodAns(numGood = 40) {
             const randBadAnswer = (j * 3) + (Math.floor(Math.random() * 3));
             const odp = odpGood[j].innerHTML.charAt(8);
             result[j].innerHTML = 'Pomyłka! Poprawna odpowiedź to ' + odp + ' (twoja odpowiedź: ' + badAns[randBadAnswer].innerHTML.charAt(8) + ')';
-            console.log(badAns[randBadAnswer]);
 
             badAns[randBadAnswer].classList.remove('odpbad');
             badAns[randBadAnswer].classList.add('odpwrong');
@@ -64,6 +64,8 @@ function goodAns(numGood = 40) {
         }
 
     }
+
     /*AUTOR: TRXDW*/
+    /*LICENCJA MIT*/
     console.clear();
 }
